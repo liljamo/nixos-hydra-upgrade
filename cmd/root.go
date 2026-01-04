@@ -83,6 +83,7 @@ Config follows the precedence CLI Flag > Environment varible > YAML config, with
 
 			// check flake metadata to see if this is an update
 			selfMetadata := nix.GetFlakeMetadata("self")
+			slog.Debug("hydraMetadata", Slog.String("flake", eval.Flake))
 			hydraMetadata := nix.GetFlakeMetadata(eval.Flake)
 
 			if selfMetadata.LastModified >= hydraMetadata.LastModified {
