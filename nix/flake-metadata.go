@@ -19,7 +19,7 @@ func GetFlakeMetadata(flake string) FlakeMetadata {
 
 	output, err := cmd.Output()
 	if err != nil {
-		slog.Debug(slog.String("output", output))
+		slog.Debug("err output", slog.String("output", output))
 		panic(err)
 	}
 
